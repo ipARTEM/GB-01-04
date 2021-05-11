@@ -12,43 +12,42 @@ namespace Task04
         {
             
 
-            Console.WriteLine("Введите число Фибоначчи, а я Вам напищу элкскнт числовой последовательности: ");
-            string fib=Console.ReadLine();
-            int fibonacci = Convert.ToInt32( fib);
+            Console.WriteLine("Введите число Фибоначчи, а я Вам напищу элемант числовой последовательности: ");
+            Console.WriteLine("и Факториал числа: ");
+            string numberStr = Console.ReadLine();
 
-            GetFront(fibonacci);
-            GetFibonacci(fibonacci);
+            double numberFac = Convert.ToInt32(numberStr);
+            double number1 = numberFac;
+            numberFac = GetFactorial(number1);
+            Console.WriteLine($"Факториал числа  {number1} = {numberFac}");
 
-
+            double numberFib = Convert.ToInt32(numberStr);
+            double number2 = numberFib;
+            numberFib=GetFibonacci(number2);
+            Console.WriteLine($"Число Фибоначчи  {number2} = {numberFib}");
         }
 
 
-        static int GetFibonacci(int number)
+        static double GetFactorial(double n)
         {
-            if (number == 1) // терминальное условие
+            if (n == 1) // терминальное условие
             {
-                return number;
+                return n;
             }
-            return number * GetFibonacci(number - 1); // рекурсивный вызов
-
-            Console.WriteLine(number);
+            return n * GetFactorial(n - 1); // рекурсивный вызов
         }
 
-        static int GetFront(int number)
+        static double GetFibonacci(double number)
         {
-            int number1 = 0;
-            int number2 = 1;
-
-            int numberN = number1 + number2;
-
-            if (numberN==1)
+            if (number<1)
             {
-                return numberN;
+                return 0;
             }
-            return numberN + GetFront(numberN);
-
-
+            if (number == 1)
+            {
+                return 1;
+            }
+            return GetFibonacci(number-1)+ GetFibonacci(number-2);
         }
-
     }
 }
