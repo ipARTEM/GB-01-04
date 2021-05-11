@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GB_01_04
 {
-    class People
+    class Person
     {
         public string FirstName { get; set; }
 
@@ -14,11 +14,7 @@ namespace GB_01_04
 
         public string Patronymic { get; set; }
 
-        public void GetFullName(string firstName, string lastName, string patronymic)
-        {
-            Console.WriteLine($" Имя: {firstName}, Фамилия: {lastName}, Отчество: {patronymic}");
-
-        }
+ 
 
         public void GetFullName()
         {
