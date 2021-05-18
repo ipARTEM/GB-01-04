@@ -11,24 +11,19 @@ namespace Task02
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите любой набор символов, а я напишу сумму всех чисел: ");
-            string set = Console.ReadLine();
+            Console.WriteLine("Введите набор чисел разделив их пробелами: ");
+             string strNum = Console.ReadLine();
 
-            char[] setChar = set.ToCharArray();
+            int[] number  = strNum.Split(' ').Select(x => int.Parse(x)).ToArray();
 
-            int intSet=0 ;
+            int sumNumber = 0;
 
-            for (int i = 0; i < setChar.Length; i++)
+            for (int i = 0; i < number.Length; i++)
             {
-                if ('0' <= setChar[i] && setChar[i] <= '9')
-                {
-
-                    int intChat=Convert.ToInt32(setChar[i].ToString());
-                    intSet = intSet + intChat;
-
-                }
-
+                sumNumber += number[i];
             }
+
+
 
             Console.WriteLine($"Э-мм, сейчас попробую угадать... какая же сумма будет)))");
             Thread.Sleep(300);
@@ -37,7 +32,7 @@ namespace Task02
             Console.Write(" . ");
             Thread.Sleep(300);
             Console.Write(" . ");
-            Console.WriteLine($"Может быть {intSet}");
+            Console.WriteLine($"Может быть {sumNumber}");
 
 
 
