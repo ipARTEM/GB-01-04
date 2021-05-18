@@ -22,9 +22,6 @@ namespace Task02
             {
                 sumNumber += number[i];
             }
-
-
-
             Console.WriteLine($"Э-мм, сейчас попробую угадать... какая же сумма будет)))");
             Thread.Sleep(300);
             Console.Write(" . ");
@@ -33,10 +30,6 @@ namespace Task02
             Thread.Sleep(300);
             Console.Write(" . ");
             Console.WriteLine($"Может быть {sumNumber}");
-
-
-
-
         }
     }
 }
